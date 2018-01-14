@@ -1,11 +1,21 @@
-import { Text } from 'react-native';
+import { Button, Text, View } from 'react-native';
 import React from 'react';
 
 export default class HomeContainer extends React.Component {
   static navigationOptions = {
     title: 'Welcome'
   };
+
   render() {
-    return <Text>Hello, Navigation!</Text>;
+    const { navigation } = this.props;
+    return (
+      <View>
+        <Text>Hello, Navigation!</Text>
+        <Button
+          onPress={() => navigation.navigate('About')}
+          title="About"
+        />
+      </View>
+    );
   }
 }
